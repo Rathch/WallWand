@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "wallbuilder:item/wall_builder"
+    "layer0": "wallwand:item/wall_wand"
   }
 }

@@ -1,10 +1,10 @@
-# Wall Builder
+# WallWand
 
 Ein Fabric-Mod für Minecraft 1.21, mit dem du schnell Wände bauen kannst.
 
 ## Features
 
-- **Wand-Bauwerkzeug** mit Zauberstab-Textur
+- **WallWand** — Zauberstab zum schnellen Bauen von Wänden
 - Baumodi: **Normal**, **Diagonal**, **Palisade**, **Turm**
 - **Zufallsmodus**: nutzt zufällige Blöcke aus der Hotbar
 - Einstellbare **Breite**, **Höhe** und **Durchmesser** (je 1–32 Blöcke)
@@ -17,13 +17,13 @@ Ein Fabric-Mod für Minecraft 1.21, mit dem du schnell Wände bauen kannst.
 
 1. [Fabric Loader](https://fabricmc.net/use/) für Minecraft 1.21 installieren
 2. [Fabric API](https://modrinth.com/mod/fabric-api) in den `mods`-Ordner legen
-3. Die gebaute Mod-JAR aus `build/libs/wallbuilder-1.0.0.jar` in den `mods`-Ordner kopieren:
+3. Die gebaute Mod-JAR aus `build/libs/wallwand-1.0.0.jar` in den `mods`-Ordner kopieren:
    - Windows: `%appdata%\.minecraft\mods\`
    - Linux: `~/.minecraft/mods/`
 
 ## Bedienung
 
-1. Nimm das **Wand-Bauwerkzeug** in die Hand
+1. Nimm die **WallWand** in die Hand
 2. **Schleichen + Rechtsklick auf einen Block** → diesen Blocktyp als Material wählen
 3. Halte die passenden **Baublöcke im Inventar**
 4. **Schleichen + Rechtsklick in die Luft** → Modus, Größe und weitere Einstellungen
@@ -40,7 +40,7 @@ Ein Fabric-Mod für Minecraft 1.21, mit dem du schnell Wände bauen kannst.
 
 Der **Zufallsmodus** kann zu jedem Modus aktiviert werden und wählt pro Block zufällig aus den platzierbaren Blöcken in der Hotbar.
 
-Das Werkzeug findest du im Kreativ-Tab **Werkzeuge & Hilfsmittel** oder craftest es im Überlebensmodus:
+Die WallWand findest du im Kreativ-Tab **Werkzeuge & Hilfsmittel** oder craftest sie im Überlebensmodus:
 
 ```
 Stein
@@ -59,7 +59,7 @@ Stein
 ./gradlew runClient   # Test-Client starten
 ```
 
-Die fertige Mod liegt nach dem Build unter `build/libs/wallbuilder-1.0.0.jar`.
+Die fertige Mod liegt nach dem Build unter `build/libs/wallwand-1.0.0.jar`.
 
 ## Lizenz
 
