@@ -1,0 +1,26 @@
+{
+	"schemaVersion": 1,
+	"id": "wallbuilder",
+	"version": "${version}",
+	"name": "Wall Builder",
+	"description": "Baue Wände mit einstellbarer Breite, Höhe und Ausrichtung aus dem Material in deiner Hand.",
+	"authors": [
+		"geborune"
+	],
+	"license": "MIT",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"de.geborune.wallbuilder.WallBuilderMod"
+		],
+		"client": [
+			"de.geborune.wallbuilder.client.WallBuilderModClient"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
