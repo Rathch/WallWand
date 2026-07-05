@@ -1,0 +1,16 @@
+{
+  "item.wallbuilder.wall_builder": "Wand-Bauwerkzeug",
+  "item.wallbuilder.wall_builder.tooltip": "Breite: %s, Höhe: %s, Ausrichtung: %s",
+  "item.wallbuilder.wall_builder.tooltip.config": "Schleichen + Rechtsklick: Einstellungen öffnen",
+  "item.wallbuilder.wall_builder.no_material": "Halte Baublöcke in der anderen Hand!",
+  "item.wallbuilder.wall_builder.place_failed": "Wand konnte hier nicht platziert werden.",
+  "item.wallbuilder.wall_builder.placed": "%s Blöcke platziert.",
+  "item.wallbuilder.wall_builder.orientation.player_relative": "Spielerrelativ",
+  "item.wallbuilder.wall_builder.orientation.north_south": "Nord/Süd",
+  "item.wallbuilder.wall_builder.orientation.east_west": "Ost/West",
+  "screen.wallbuilder.title": "Wand-Einstellungen",
+  "screen.wallbuilder.width": "Breite: %s",
+  "screen.wallbuilder.height": "Höhe: %s",
+  "screen.wallbuilder.orientation": "Ausrichtung wechseln",
+  "screen.wallbuilder.orientation_value": "Aktuell: %s"
+}
