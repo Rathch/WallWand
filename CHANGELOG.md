@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.1.4] - 2026-07-05
+
+### Fixed
+- Fixed crash when opening the settings screen (`setScreen` now runs on the render thread)
+- Fixed overlapping labels on the tower shape and orientation buttons
+
 ## [1.1.3] - 2026-07-05
 
 ### Fixed
@@ -52,7 +58,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 - Unified mod ID and assets under `wallwand`
 
-[Unreleased]: https://github.com/Rathch/WallWand/compare/v1.1.3...HEAD
+[Unreleased]: https://github.com/Rathch/WallWand/compare/v1.1.4...HEAD
+[1.1.4]: https://github.com/Rathch/WallWand/compare/v1.1.3...v1.1.4
 [1.1.3]: https://github.com/Rathch/WallWand/compare/v1.1.1...v1.1.3
 [1.1.1]: https://github.com/Rathch/WallWand/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/Rathch/WallWand/compare/v1.0.0...v1.1.0

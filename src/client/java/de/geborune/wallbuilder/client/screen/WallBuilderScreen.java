@@ -125,6 +125,7 @@ public class WallBuilderScreen extends Screen {
 
 		int firstRowLabelY = startY + 61;
 		int secondRowLabelY = startY + 91;
+		int optionValueLabelY = startY + 108;
 
 		if (buildMode == WallBuildMode.TOWER) {
 			graphics.drawCenteredString(this.font, Component.translatable("screen.wallwand.diameter", diameterValue), centerX, firstRowLabelY, 0xFFFFFF);
@@ -136,7 +137,7 @@ public class WallBuilderScreen extends Screen {
 					Component.translatable("screen.wallwand.tower_shape." + towerShape.name().toLowerCase())
 				),
 				centerX,
-				startY + 121,
+				optionValueLabelY,
 				0xA0A0A0
 			);
 		} else {
@@ -149,7 +150,7 @@ public class WallBuilderScreen extends Screen {
 					Component.translatable("item.wallwand.wall_wand.orientation." + orientation.name().toLowerCase())
 				),
 				centerX,
-				startY + 121,
+				optionValueLabelY,
 				0xA0A0A0
 			);
 		}

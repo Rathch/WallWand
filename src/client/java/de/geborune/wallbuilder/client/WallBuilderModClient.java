@@ -20,7 +20,12 @@ public class WallBuilderModClient implements ClientModInitializer {
 				return InteractionResultHolder.pass(stack);
 			}
 
-			Minecraft.getInstance().setScreen(new WallBuilderScreen(stack, hand));
+			if (world.isClientSide()) {
+				Minecraft minecraft = Minecraft.getInstance();
+				ItemStack screenStack = stack.copy();
+				minecraft.execute(() -> minecraft.setScreen(new WallBuilderScreen(screenStack, hand)));
+			}
+
 			return InteractionResultHolder.success(stack);
 		});
 	}
