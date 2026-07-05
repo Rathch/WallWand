@@ -1,0 +1,5 @@
+{
+  "type": "emi:info",
+  "stacks": "item:wallwand:wall_wand",
+  "text": "emi.wallwand.craft_info"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "S  ",
+    " C ",
+    "  S"
+  ],
+  "key": {
+    "S": "minecraft:stone",
+    "C": "minecraft:stick"
+  },
+  "result": {
+    "id": "wallwand:wall_wand",
+    "count": 1
+  }
+}

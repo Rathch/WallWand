@@ -34,5 +34,6 @@
   "screen.wallwand.tower_shape_value": "Form: %s",
   "screen.wallwand.tower_shape.round": "Rund",
   "screen.wallwand.tower_shape.square": "Quadrat",
-  "screen.wallwand.tower_shape.diamond": "Raute"
+  "screen.wallwand.tower_shape.diamond": "Raute",
+  "emi.wallwand.craft_info": "Crafting (diagonal):\nStein/Bruchstein – Stock – Stein/Bruchstein"
 }

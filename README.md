@@ -1,67 +1,83 @@
 # WallWand
 
-Ein Fabric-Mod für Minecraft 1.21, mit dem du schnell Wände bauen kannst.
+A Fabric mod for Minecraft 1.21 that lets you build walls quickly.
 
 ## Features
 
-- **WallWand** — Zauberstab zum schnellen Bauen von Wänden
-- Baumodi: **Normal**, **Diagonal**, **Palisade**, **Turm**
-- **Zufallsmodus**: nutzt zufällige Blöcke aus der Hotbar
-- Einstellbare **Breite**, **Höhe** und **Durchmesser** (je 1–32 Blöcke)
-- Turmformen: **Rund**, **Quadrat**, **Raute**
-- Drei **Ausrichtungen**: spielerrelativ, Nord/Süd, Ost/West
-- Verwendet ein per **Rechtsklick gewähltes Material** aus dem Inventar
-- Einstellungsmenü per **Schleichen + Rechtsklick in die Luft**
+- **WallWand** — magic wand for fast wall building
+- Build modes: **Normal**, **Diagonal**, **Palisade**, **Tower**
+- **Random mode**: uses random blocks from your hotbar
+- Adjustable **width**, **height**, and **diameter** (1–32 blocks each)
+- Tower shapes: **Round**, **Square**, **Diamond**
+- Three **orientations**: player-relative, North/South, East/West
+- Uses a **right-click selected material** from your inventory
+- Settings menu via **sneak + right-click in the air**
 
 ## Installation
 
-1. [Fabric Loader](https://fabricmc.net/use/) für Minecraft 1.21 installieren
-2. [Fabric API](https://modrinth.com/mod/fabric-api) in den `mods`-Ordner legen
-3. Die gebaute Mod-JAR aus `build/libs/wallwand-1.0.0.jar` in den `mods`-Ordner kopieren:
+1. Install [Fabric Loader](https://fabricmc.net/use/) for Minecraft 1.21
+2. Place [Fabric API](https://modrinth.com/mod/fabric-api) in your `mods` folder
+3. Copy the built mod JAR from `build/libs/wallwand-<version>.jar` into your `mods` folder:
    - Windows: `%appdata%\.minecraft\mods\`
    - Linux: `~/.minecraft/mods/`
 
-## Bedienung
+## Usage
 
-1. Nimm die **WallWand** in die Hand
-2. **Schleichen + Rechtsklick auf einen Block** → diesen Blocktyp als Material wählen
-3. Halte die passenden **Baublöcke im Inventar**
-4. **Schleichen + Rechtsklick in die Luft** → Modus, Größe und weitere Einstellungen
-5. **Rechtsklick auf einen Block** → Struktur an der angeklickten Fläche bauen
+1. Hold the **WallWand** in your hand
+2. **Sneak + right-click a block** → select that block type as your material
+3. Keep the required **building blocks in your inventory**
+4. **Sneak + right-click in the air** → open mode, size, and other settings
+5. **Right-click a block** → place the structure on the clicked surface
 
-### Baumodi
+### Build modes
 
-| Modus | Beschreibung |
-|-------|--------------|
-| Normal | Gerade Wand |
-| Diagonal | Schräg ansteigende Wand |
-| Palisade | Zickzack-Wand |
-| Turm | Rund, quadratisch oder rautenförmig (Durchmesser + Höhe) |
+| Mode | Description |
+|------|-------------|
+| Normal | Straight wall |
+| Diagonal | Sloped / ascending wall |
+| Palisade | Zigzag wall |
+| Tower | Round, square, or diamond tower (diameter + height) |
 
-Der **Zufallsmodus** kann zu jedem Modus aktiviert werden und wählt pro Block zufällig aus den platzierbaren Blöcken in der Hotbar.
+**Random mode** can be enabled for any mode and picks randomly from placeable blocks in your hotbar.
 
-Die WallWand findest du im Kreativ-Tab **Werkzeuge & Hilfsmittel** oder craftest sie im Überlebensmodus:
+You can find the WallWand in the Creative tab **Tools & Utilities**, or craft it in survival mode:
 
 ```
-Stein
-  Stock
-    Stein
+Stein oder Bruchstein
+      Stock
+        Stein oder Bruchstein
 ```
 
-(diagonal in der Werkbank)
+(diagonal in der Werkbank – Stein und Bruchstein funktionieren beide)
 
-## Entwicklung
+Das Rezept wird in **EMI** und **JEI** angezeigt, wenn diese Mods installiert sind.
 
-**Voraussetzungen:** Java 21
+## Development
+
+**Requirements:** Java 21
 
 ```bash
-./gradlew build       # Mod bauen
-./gradlew runClient   # Test-Client starten
+./gradlew build       # Build the mod
+./gradlew runClient   # Start test client
 ```
 
-Die fertige Mod liegt nach dem Build unter `build/libs/wallwand-1.0.0.jar`.
+The built mod is located at `build/libs/wallwand-<version>.jar` after a successful build.
 
-## Lizenz
+## Versionierung
 
-Dieses Projekt steht unter der **GNU General Public License v3.0** (GPL-3.0).
-Siehe [LICENSE](LICENSE) für den vollständigen Lizenztext.
+Dieses Projekt nutzt [Semantic Versioning](https://semver.org/lang/de/):
+
+| Teil | Bedeutung | Beispiel |
+|------|-----------|----------|
+| **MAJOR** | Inkompatible Änderungen | `2.0.0` |
+| **MINOR** | Neue Features (abwärtskompatibel) | `1.1.0` |
+| **PATCH** | Fehlerbehebungen (abwärtskompatibel) | `1.0.1` |
+
+Die Version steht in `gradle.properties` (`mod_version`) und wird in die Mod-JAR übernommen.
+Änderungen sind im [CHANGELOG.md](CHANGELOG.md) dokumentiert.
+Releases werden als Git-Tags (`v1.0.0`, `v1.1.0`, …) markiert.
+
+## License
+
+This project is licensed under the **GNU General Public License v3.0** (GPL-3.0).
+See [LICENSE](LICENSE) for the full license text.

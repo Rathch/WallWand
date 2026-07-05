@@ -15,6 +15,12 @@
 		],
 		"client": [
 			"de.geborune.wallbuilder.client.WallBuilderModClient"
+		],
+		"emi": [
+			"de.geborune.wallbuilder.client.integration.emi.WallWandEmiPlugin"
+		],
+		"jei_mod_plugin": [
+			"de.geborune.wallbuilder.client.integration.jei.WallWandJeiPlugin"
 		]
 	},
 	"depends": {
@@ -22,5 +28,9 @@
 		"minecraft": "~1.21",
 		"java": ">=21",
 		"fabric-api": "*"
+	},
+	"suggests": {
+		"emi": "*",
+		"jei": "*"
 	}
 }
