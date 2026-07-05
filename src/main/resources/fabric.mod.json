@@ -9,6 +9,9 @@
 	],
 	"license": "GPL-3.0-only",
 	"environment": "*",
+	"mixins": [
+		"wallwand.mixins.json"
+	],
 	"entrypoints": {
 		"main": [
 			"de.geborune.wallbuilder.WallBuilderMod"

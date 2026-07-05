@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "de.geborune.wallbuilder.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"RecipeManagerMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

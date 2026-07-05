@@ -2,11 +2,11 @@ package de.geborune.wallbuilder.client.integration.emi;
 
 import de.geborune.wallbuilder.WallBuilderMod;
 import de.geborune.wallbuilder.registry.ModItems;
+import de.geborune.wallbuilder.util.WallWandRecipes;
 import dev.emi.emi.api.EmiPlugin;
 import dev.emi.emi.api.EmiRegistry;
 import dev.emi.emi.api.recipe.EmiCraftingRecipe;
 import dev.emi.emi.api.stack.EmiStack;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 
@@ -15,11 +15,11 @@ import java.util.List;
 public class WallWandEmiPlugin implements EmiPlugin {
 	@Override
 	public void register(EmiRegistry registry) {
-		registerDiagonalRecipe(registry, Items.STONE, WallBuilderMod.id("wall_wand_from_stone"));
-		registerDiagonalRecipe(registry, Items.COBBLESTONE, WallBuilderMod.id("wall_wand_from_cobblestone"));
+		registerDiagonalRecipe(registry, Items.STONE, WallWandRecipes.STONE_ID);
+		registerDiagonalRecipe(registry, Items.COBBLESTONE, WallWandRecipes.COBBLESTONE_ID);
 	}
 
-	private void registerDiagonalRecipe(EmiRegistry registry, Item stone, ResourceLocation id) {
+	private void registerDiagonalRecipe(EmiRegistry registry, Item stone, net.minecraft.resources.ResourceLocation id) {
 		registry.addRecipe(new EmiCraftingRecipe(
 			List.of(
 				EmiStack.of(stone),

@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.1.3] - 2026-07-05
+
+### Fixed
+- Fixed crash on world load caused by writing recipes into an immutable recipe map (1.21.1 / Recipe Essentials)
+- Crafting recipes are now injected safely during recipe loading instead of after reload
+
+## [1.1.1] - 2026-07-05
+
+### Fixed
+- Crafting recipes now load correctly by using the `recipe/` data folder (Minecraft 1.21+)
+- JEI now always shows WallWand crafting recipes (no longer depends on a loaded world)
+
 ## [1.1.0] - 2026-07-05
 
 ### Added
@@ -40,6 +52,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Changed
 - Unified mod ID and assets under `wallwand`
 
-[Unreleased]: https://github.com/Rathch/WallWand/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/Rathch/WallWand/compare/v1.1.3...HEAD
+[1.1.3]: https://github.com/Rathch/WallWand/compare/v1.1.1...v1.1.3
+[1.1.1]: https://github.com/Rathch/WallWand/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/Rathch/WallWand/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Rathch/WallWand/releases/tag/v1.0.0
