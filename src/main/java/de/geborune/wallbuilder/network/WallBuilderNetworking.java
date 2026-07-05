@@ -1,6 +1,8 @@
 package de.geborune.wallbuilder.network;
 
 import de.geborune.wallbuilder.WallBuilderMod;
+import de.geborune.wallbuilder.item.TowerShape;
+import de.geborune.wallbuilder.item.WallBuildMode;
 import de.geborune.wallbuilder.item.WallOrientation;
 import de.geborune.wallbuilder.item.WallSettings;
 import de.geborune.wallbuilder.item.WallBuilderItem;
@@ -33,29 +35,70 @@ public final class WallBuilderNetworking {
 
 				WallSettings.setWidth(stack, payload.width());
 				WallSettings.setHeight(stack, payload.height());
-
-				try {
-					WallSettings.setOrientation(stack, WallOrientation.valueOf(payload.orientation()));
-				} catch (IllegalArgumentException ignored) {
-					WallSettings.setOrientation(stack, WallOrientation.PLAYER_RELATIVE);
-				}
-
+				WallSettings.setDiameter(stack, payload.diameter());
+				WallSettings.setRandomMode(stack, payload.randomMode());
+				WallSettings.setOrientation(stack, parseEnum(payload.orientation(), WallOrientation.PLAYER_RELATIVE, WallOrientation.class));
+				WallSettings.setBuildMode(stack, parseEnum(payload.buildMode(), WallBuildMode.NORMAL, WallBuildMode.class));
+				WallSettings.setTowerShape(stack, parseEnum(payload.towerShape(), TowerShape.ROUND, TowerShape.class));
 				context.player().setItemInHand(hand, stack);
 			});
 		});
 	}
 
-	public record UpdateSettingsPayload(int width, int height, String orientation, int handOrdinal) implements CustomPacketPayload {
-		public static final StreamCodec<RegistryFriendlyByteBuf, UpdateSettingsPayload> STREAM_CODEC = StreamCodec.composite(
+	private static <T extends Enum<T>> T parseEnum(String value, T defaultValue, Class<T> type) {
+		try {
+			return Enum.valueOf(type, value);
+		} catch (IllegalArgumentException | NullPointerException ignored) {
+			return defaultValue;
+		}
+	}
+
+	public record UpdateSettingsPayload(
+		int width,
+		int height,
+		int diameter,
+		String orientation,
+		String buildMode,
+		boolean randomMode,
+		String towerShape,
+		int handOrdinal
+	) implements CustomPacketPayload {
+		private record SettingsBody(int width, int height, int diameter, String orientation, String buildMode, boolean randomMode) {
+		}
+
+		private static final StreamCodec<RegistryFriendlyByteBuf, SettingsBody> BODY_CODEC = StreamCodec.composite(
 			ByteBufCodecs.VAR_INT,
-			UpdateSettingsPayload::width,
+			SettingsBody::width,
 			ByteBufCodecs.VAR_INT,
-			UpdateSettingsPayload::height,
+			SettingsBody::height,
+			ByteBufCodecs.VAR_INT,
+			SettingsBody::diameter,
 			ByteBufCodecs.STRING_UTF8,
-			UpdateSettingsPayload::orientation,
+			SettingsBody::orientation,
+			ByteBufCodecs.STRING_UTF8,
+			SettingsBody::buildMode,
+			ByteBufCodecs.BOOL,
+			SettingsBody::randomMode,
+			SettingsBody::new
+		);
+
+		public static final StreamCodec<RegistryFriendlyByteBuf, UpdateSettingsPayload> STREAM_CODEC = StreamCodec.composite(
+			BODY_CODEC,
+			payload -> new SettingsBody(payload.width(), payload.height(), payload.diameter(), payload.orientation(), payload.buildMode(), payload.randomMode()),
+			ByteBufCodecs.STRING_UTF8,
+			UpdateSettingsPayload::towerShape,
 			ByteBufCodecs.VAR_INT,
 			UpdateSettingsPayload::handOrdinal,
-			UpdateSettingsPayload::new
+			(body, towerShape, handOrdinal) -> new UpdateSettingsPayload(
+				body.width(),
+				body.height(),
+				body.diameter(),
+				body.orientation(),
+				body.buildMode(),
+				body.randomMode(),
+				towerShape,
+				handOrdinal
+			)
 		);
 
 		@Override

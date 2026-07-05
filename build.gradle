@@ -13,7 +13,7 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"wallbuilder" {
+		"wallwand" {
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}

@@ -8,14 +8,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class WallBuilderMod implements ModInitializer {
-	public static final String MOD_ID = "wallbuilder";
+	public static final String MOD_ID = "wallwand";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
 	public void onInitialize() {
 		ModItems.register();
 		WallBuilderNetworking.register();
-		LOGGER.info("Wall Builder geladen");
+		LOGGER.info("WallWand loaded");
 	}
 
 	public static ResourceLocation id(String path) {

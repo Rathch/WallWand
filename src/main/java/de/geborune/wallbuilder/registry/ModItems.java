@@ -15,7 +15,7 @@ public final class ModItems {
 	}
 
 	public static void register() {
-		Registry.register(BuiltInRegistries.ITEM, WallBuilderMod.id("wall_builder"), WALL_BUILDER);
+		Registry.register(BuiltInRegistries.ITEM, WallBuilderMod.id("wall_wand"), WALL_BUILDER);
 
 		ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.TOOLS_AND_UTILITIES).register(entries -> entries.accept(WALL_BUILDER));
 	}

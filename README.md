@@ -5,10 +5,13 @@ Ein Fabric-Mod für Minecraft 1.21, mit dem du schnell Wände bauen kannst.
 ## Features
 
 - **Wand-Bauwerkzeug** mit Zauberstab-Textur
-- Einstellbare **Breite** und **Höhe** (je 1–32 Blöcke)
+- Baumodi: **Normal**, **Diagonal**, **Palisade**, **Turm**
+- **Zufallsmodus**: nutzt zufällige Blöcke aus der Hotbar
+- Einstellbare **Breite**, **Höhe** und **Durchmesser** (je 1–32 Blöcke)
+- Turmformen: **Rund**, **Quadrat**, **Raute**
 - Drei **Ausrichtungen**: spielerrelativ, Nord/Süd, Ost/West
-- Verwendet das **Baumaterial aus der anderen Hand**
-- Einstellungsmenü per **Schleichen + Rechtsklick**
+- Verwendet ein per **Rechtsklick gewähltes Material** aus dem Inventar
+- Einstellungsmenü per **Schleichen + Rechtsklick in die Luft**
 
 ## Installation
 
@@ -20,12 +23,32 @@ Ein Fabric-Mod für Minecraft 1.21, mit dem du schnell Wände bauen kannst.
 
 ## Bedienung
 
-1. Nimm das **Wand-Bauwerkzeug** in eine Hand
-2. Halte **Baublöcke in der anderen Hand**
-3. **Schleichen + Rechtsklick** → Breite, Höhe und Ausrichtung einstellen
-4. **Rechtsklick auf einen Block** → Wand an der angeklickten Fläche bauen
+1. Nimm das **Wand-Bauwerkzeug** in die Hand
+2. **Schleichen + Rechtsklick auf einen Block** → diesen Blocktyp als Material wählen
+3. Halte die passenden **Baublöcke im Inventar**
+4. **Schleichen + Rechtsklick in die Luft** → Modus, Größe und weitere Einstellungen
+5. **Rechtsklick auf einen Block** → Struktur an der angeklickten Fläche bauen
 
-Das Werkzeug findest du im Kreativ-Tab **Werkzeuge & Hilfsmittel**.
+### Baumodi
+
+| Modus | Beschreibung |
+|-------|--------------|
+| Normal | Gerade Wand |
+| Diagonal | Schräg ansteigende Wand |
+| Palisade | Zickzack-Wand |
+| Turm | Rund, quadratisch oder rautenförmig (Durchmesser + Höhe) |
+
+Der **Zufallsmodus** kann zu jedem Modus aktiviert werden und wählt pro Block zufällig aus den platzierbaren Blöcken in der Hotbar.
+
+Das Werkzeug findest du im Kreativ-Tab **Werkzeuge & Hilfsmittel** oder craftest es im Überlebensmodus:
+
+```
+Stein
+  Stock
+    Stein
+```
+
+(diagonal in der Werkbank)
 
 ## Entwicklung
 
@@ -40,4 +63,5 @@ Die fertige Mod liegt nach dem Build unter `build/libs/wallbuilder-1.0.0.jar`.
 
 ## Lizenz
 
-MIT
+Dieses Projekt steht unter der **GNU General Public License v3.0** (GPL-3.0).
+Siehe [LICENSE](LICENSE) für den vollständigen Lizenztext.
